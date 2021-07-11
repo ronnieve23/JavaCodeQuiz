@@ -8,7 +8,7 @@ function viewScores(){
 
     highscores.forEach (function(score){
     var liType = document.createElement("li");
-    liType.textContent = score.intials + "-" + score.score;
+    liType.textContent = score.initials + "-" + score.score;
     
     var olEl = document.getElementById ("highscores");
     olEl.appendChild(liType);
