@@ -44,6 +44,7 @@ var correctCount = 0;
 var time = questions.length * 15;
 
 function startQuiz() {
+  timerEl.textContent = time;
   renderQuestion();
 }
 
@@ -51,8 +52,6 @@ function hideStart() {
   var welcomeEl = document.querySelector("#Welcome");
   welcomeEl.style.display = 'none';
 }
-
-
 
 
 function endQuiz() {
@@ -92,7 +91,7 @@ function renderQuestion() {
     updateTime();
     return;
   }
-
+  updateTime.textContent = time;
   intervalId = setInterval(updateTime, 1000);
   var questionEl = document.getElementById("question");
   questionEl.style.display = 'block';
@@ -102,9 +101,9 @@ function renderQuestion() {
   questionResultEl.innerHTML = "";
 
   var choices = questions[questionIndex].choices;
-  var choicesLenth = choices.length;
+  var choicesLength = choices.length;
 
-  for (var i = 0; i < choicesLenth; i++) {
+  for (var i = 0; i < choicesLength; i++) {
     var questionListItem = document.createElement("li");
     questionListItem.textContent = choices[i];
     optionListEl.append(questionListItem);
