@@ -51,11 +51,29 @@ function hideStart () {
 }
 
 
+
+
 function endQuiz() {
-  clearInterval(intervalId);
-  var finalscreenEL = document.getElementById("finalscreen")
-  finalscreenEL.removeAttribute ("class");
-  finalscreenEL.textContent = correctCount;
+ clearInterval(intervalId);
+  var questionEl =document.getElementById("question");
+  questionEl.style.display  = 'none';
+
+  var optionListEl = document.getElementById ("option-list");
+  optionListEl.style.display = 'none';
+
+  var timerEl = document.getElementById ("timer");
+  timerEl.style.display = 'none';
+
+  var questionResultEl = document.getElementById ("question-result");
+  questionResultEl.style.display = 'none';
+
+  var finalscreenEL = document.getElementById("finalscreen");
+  finalscreenEL.style.display = 'block';
+
+  var finalscoreEl = document.getElementById ("score");
+  finalscoreEl.textContent = correctCount;
+
+
 }
 
 function updateTime() {
@@ -74,7 +92,8 @@ function renderQuestion() {
   }
 
   intervalId = setInterval(updateTime, 1000);
-  
+  var questionEl = document.getElementById("question");
+  questionEl.style.display = 'block';
   questionEl.textContent = questions[questionIndex].question;
 
   optionListEl.innerHTML = "";
