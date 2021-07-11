@@ -13,8 +13,13 @@ function viewScores(){
     var olEl = document.getElementById ("highscores");
     olEl.appendChild(liType);
     });
-
-   
 }
+
+function eraseHighscores () {
+    window.localStorage.removeItem("highscores");
+    window.location.reload();
+}
+
+document.getElementById("erase").addEventListener ("click", eraseHighscores);
 
 viewScores();
