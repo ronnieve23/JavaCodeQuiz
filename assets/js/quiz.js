@@ -1,15 +1,34 @@
 var questions = [
   {
-    question: "Commonly used data types DO NOT include:",
+    question: "1. Commonly used data types DO NOT include:",
     choices: ["strings", "booleans", "alerts", "numbers"],
     answer: "alerts",
   },
   {
     question:
-      "The condition in an if / else statement is enclosed within ____.",
+      "2. The condition in an if / else statement is enclosed within ____.",
     choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
     answer: "parentheses",
   },
+  {
+    question:
+      "3. All Java Programming statements must end with a ____.",
+    choices: ["semicolon", "colon", "period", "comma"],
+    answer: "semicolon",
+  },
+  {
+    question:
+      "4. A boolean value variable can hold ____.",
+    choices: ["any character", "any whole number", "any decimal number", "the value of true or false"],
+    answer: "the value of true or false",
+  },
+  {
+    question:
+      "5. If a loop does not contain within itself a way to terminate, it is called a(n) ____.",
+    choices: ["while loop", "do-while loop", "for loop", "infinite loop"],
+    answer: "infinite loop",
+  },
+  
 ];
 
 var questionEl = document.querySelector("#question");
@@ -88,11 +107,11 @@ function checkAnswer(event) {
       correctCount++;
     } else {
       questionResultEl.textContent = "Incorrect";
-      time = time - 2;
+      time = time - 10;
       timerEl.textContent = time;
     }
   }
-  setTimeout(nextQuestion, 2000);
+  setTimeout(nextQuestion, 500);
 }
 
 //renderQuestion();
