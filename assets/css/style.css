@@ -1,11 +1,23 @@
+body {
+    font-family: monospace;
+    font-size: 40px;
+    background-color: blanchedalmond;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+button {
+    font-size: 40px;
+}
+
+
+
+
+
 .hide {
     display: none;
 }
 
-/*#finalscreen {
-    display: none;
-}
-
-#question {
-    display: none;
-}
