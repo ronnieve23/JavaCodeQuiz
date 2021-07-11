@@ -42,7 +42,6 @@ var correctCount = 0;
 var time = questions.length*15;
 
 function startQuiz (){
-  var welcomeEl = document.querySelector ("#Welcome");
     renderQuestion ();
 }
 
@@ -54,8 +53,9 @@ function hideStart () {
 
 function endQuiz() {
   clearInterval(intervalId);
-  var body = document.body;
-  body.innerHTML = "Game over, You scored " + correctCount;
+  var finalscreenEL = document.getElementById("finalscreen")
+  finalscreenEL.removeAttribute ("class");
+  finalscreenEL.textContent = correctCount;
 }
 
 function updateTime() {
