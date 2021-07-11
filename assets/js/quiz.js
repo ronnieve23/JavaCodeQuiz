@@ -16,12 +16,22 @@ var questionEl = document.querySelector("#question");
 var optionListEl = document.querySelector("#option-list");
 var questionResultEl = document.querySelector("#question-result");
 var timerEl = document.querySelector("#timer");
-
+var startBtn = document.querySelector("#Start");
 var questionIndex = 0;
 var correctCount = 0;
 
-var time = 20;
-var intervalId;
+var time = questions.length*15;
+
+function startQuiz (){
+  var welcomeEl = document.querySelector ("#Welcome");
+    renderQuestion ();
+}
+
+function hideStart () {
+  var welcomeEl =document.querySelector ("#Welcome");
+  welcomeEl.style.display = 'none';
+}
+
 
 function endQuiz() {
   clearInterval(intervalId);
@@ -85,5 +95,12 @@ function checkAnswer(event) {
   setTimeout(nextQuestion, 2000);
 }
 
-renderQuestion();
+//renderQuestion();
 optionListEl.addEventListener("click", checkAnswer);
+
+startBtn.addEventListener("click", () => 
+{
+hideStart();
+renderQuestion();
+}
+);
