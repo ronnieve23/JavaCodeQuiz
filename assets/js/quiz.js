@@ -28,7 +28,7 @@ var questions = [
     choices: ["while loop", "do-while loop", "for loop", "infinite loop"],
     answer: "infinite loop",
   },
-  
+
 ];
 
 var questionEl = document.querySelector("#question");
@@ -41,14 +41,14 @@ var startBtn = document.querySelector("#Start");
 var questionIndex = 0;
 var correctCount = 0;
 
-var time = questions.length*15;
+var time = questions.length * 15;
 
-function startQuiz (){
-    renderQuestion ();
+function startQuiz() {
+  renderQuestion();
 }
 
-function hideStart () {
-  var welcomeEl =document.querySelector ("#Welcome");
+function hideStart() {
+  var welcomeEl = document.querySelector("#Welcome");
   welcomeEl.style.display = 'none';
 }
 
@@ -56,23 +56,23 @@ function hideStart () {
 
 
 function endQuiz() {
- clearInterval(intervalId);
-  var questionEl =document.getElementById("question");
-  questionEl.style.display  = 'none';
+  clearInterval(intervalId);
+  var questionEl = document.getElementById("question");
+  questionEl.style.display = 'none';
 
-  var optionListEl = document.getElementById ("option-list");
+  var optionListEl = document.getElementById("option-list");
   optionListEl.style.display = 'none';
 
-  var timerEl = document.getElementById ("timer");
+  var timerEl = document.getElementById("timer");
   timerEl.style.display = 'none';
 
-  var questionResultEl = document.getElementById ("question-result");
+  var questionResultEl = document.getElementById("question-result");
   questionResultEl.style.display = 'none';
 
   var finalscreenEL = document.getElementById("finalscreen");
   finalscreenEL.style.display = 'block';
 
-  var finalscoreEl = document.getElementById ("score");
+  var finalscoreEl = document.getElementById("score");
   finalscoreEl.textContent = correctCount;
 
 
@@ -87,7 +87,7 @@ function updateTime() {
 }
 
 function renderQuestion() {
-  
+
   if (time == 0) {
     updateTime();
     return;
@@ -135,12 +135,32 @@ function checkAnswer(event) {
   setTimeout(nextQuestion, 500);
 }
 
-//renderQuestion();
-optionListEl.addEventListener("click", checkAnswer);
+function saveScore () {
+  var initials = intialsEl.value.trim();
+  if (initials !=="") {
+      var highscores =
+      JSON.parse(window.localStorage.getItem("highscores")) || [];
+      
+      var currentScore = {
+        score: correctCount,
+        initials: initials
+      };
 
-startBtn.addEventListener("click", () => 
-{
-hideStart();
-renderQuestion();
+      highscores.push(currentScore);
+      window.localStorage.setItem("highscores", JSON.stringify(highscores));
+
+      window.location.href = "./highscore.html";
+
+  }
+
+}
+
+
+optionListEl.addEventListener("click", checkAnswer);
+startBtn.addEventListener("click", () => {
+  hideStart();
+  renderQuestion();
 }
 );
+
+submitBtn.addEventListener("click", saveScore);
