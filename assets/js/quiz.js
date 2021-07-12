@@ -127,7 +127,7 @@ function checkAnswer(event) {
       correctCount++;
     } else {
       questionResultEl.textContent = "Incorrect";
-      time = time - 10;
+      time = time - 15;
       timerEl.textContent = time;
     }
   }
