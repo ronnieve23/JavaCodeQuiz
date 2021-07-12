@@ -1,6 +1,6 @@
 body {
     font-family: monospace;
-    font-size: 40px;
+    font-size: 25px;
     background-color: blanchedalmond;
 }
 
@@ -13,16 +13,33 @@ a:hover {
     background-color: salmon;
 }
 
+ol:hover {
+    cursor: pointer;
+}
+
 li:hover {
     background-color: salmon;
 }
 
+header {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+h1 , p {
+    text-align: center;
+}
+
+
 button {
-    font-size: 40px;
+font-size: 25px;
+margin: 0 auto;
+display: block;
 }
 
 input {
-    font-size: 40px;
+    font-size: 25px;
 }
 
 

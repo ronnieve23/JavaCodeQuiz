@@ -10,42 +10,44 @@
 </head>
 
 <body>
-    <div id="timer">Time Left: 0</div>
-    <div class="highscores"><a href="./highscore.html">See Highscores</a></div>
-<main class="bodywrap">
-    <div id="Welcome"> 
-        <h1>Welcome to the Java Code Quiz!</h1>
-        <p>
-            This quiz will have 5 questions relating to Java Script! Do your best to answer all the questions within the given time limit.
-            Wrong answers will result in 10 seconds being deducted from your time left. Keep this in mind and make sure you don't run out of time before you get to the last question!
-        </p>
-        <button id="Start">Start!</button>
-    </div>
+    <header>
+        <div class="highscores"><a href="./highscore.html">See Highscores</a></div>
 
-  
-   
+        <div id="timer">Time Left: 0</div>
+    </header>
+    <main class="bodywrap">
+        <div id="Welcome">
+            <h1>Welcome to the Java Code Quiz!</h1>
+            <p>
+                This quiz will have 5 questions relating to Java Script! Do your best to answer all the questions within
+                the given time limit.
+                Wrong answers will result in 10 seconds being deducted from your time left. Keep this in mind and make
+                sure you don't run out of time before you get to the last question!
+            </p>
+            <button id="Start">Start!</button>
+        </div>
 
-    <div id="question" class="hide">
-        <div id="choices"></div>
-    </div>
+        <div id="question" class="hide">
+            <div id="choices"></div>
+        </div>
 
-    <ol id="option-list"></ol>
+        <ol id="option-list"></ol>
 
-    <div id="question-result"></div>
+        <div id="question-result"></div>
 
-    <div id="finalscreen" class="hide">
-        <h1>
-            You Did it!
-        </h1>
-        <p>
-            Your final score is <span id="score"></span>.
-        </p>
-        <p>
-            Enter your initials: <input type="text" id="yourinitials">
-            <button id="submit">Submit!</button>
-        </p>
-    </div>
-</main>
+        <div id="finalscreen" class="hide">
+            <h1>
+                You Did it!
+            </h1>
+            <p>
+                Your final score is <span id="score"></span>.
+            </p>
+            <p>
+                Enter your initials: <input type="text" id="yourinitials">
+                <button id="submit">Submit!</button>
+            </p>
+        </div>
+    </main>
     <script src="./assets/js/quiz.js"></script>
 
 
