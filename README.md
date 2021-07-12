@@ -8,6 +8,9 @@ At the end of the quiz, users are given the option to leave their initials and h
 Here's a preview of the website!
 ![Website Screenshot](./assets/screenshots/landingpage.png)
 
-![Website Screenshot](./assets/screnshots/question.png)
+![Website Screenshot](./assets/screenshots/question.png)
 
+## Website
+You can visit the Website here!
 
+https://ronnieve23.github.io/JavaCodeQuiz/
